@@ -12,7 +12,11 @@ export default function ExchangeCard(exchange: ExchangeInterface) {
       data-testid='exchange-card'
     >
       <div className='exchange-card__logo'>
-        <img src={exchange.image} alt='exchange-logo' />
+        <img
+          data-testid='exchange-logo'
+          src={exchange.image}
+          alt='exchange-logo'
+        />
       </div>
       <div className='exchange-card__detail'>
         <div className='exchange-card__name'>{exchange.name}</div>

@@ -9,7 +9,11 @@ export default function ExchangeDetail(
   return (
     <div className='exchange-detail' data-testid='exchange-detail'>
       <div className='exchange-detail__logo'>
-        <img src={exchangeDetail.image} alt='exchange-logo' />
+        <img
+          data-testid='exchange-logo'
+          src={exchangeDetail.image}
+          alt='exchange-logo'
+        />
       </div>
       <div className='exchange-detail__container'>
         <div className='exchange-detail__name'>{exchangeDetail.name}</div>
@@ -35,6 +39,7 @@ export default function ExchangeDetail(
           <strong>Social Links: </strong>
           {exchangeDetail.facebook_url && (
             <span
+              data-testid='facebook-icon'
               className='exchange-detail__social-icon'
               onClick={() => window.open(exchangeDetail.facebook_url)}
             >

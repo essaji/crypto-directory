@@ -12,6 +12,10 @@ Small frontend project to list crypto exchanges & their details.
 
 From your terminal run `npm start`
 
+## Run cypress tests
+
+From your terminal run `npm run test:e2e`
+
 ## Live versions
 * https://crypto-directory.vercel.app/
 * https://crypto-directory.herokuapp.com/
