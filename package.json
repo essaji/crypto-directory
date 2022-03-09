@@ -16,16 +16,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:e2e": "start-server-and-test start 3000 cypress",
-    "cypress": "cypress run --config-file cypress/cypress.json",
-    "lint": "eslint src",
-    "prettier:fix": "prettier --write",
-    "prettier:check": "prettier --check ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "cypress": "cypress run --config-file cypress/cypress.json"
   },
   "browserslist": {
     "production": [
@@ -40,10 +31,15 @@
     ]
   },
   "lint-staged": {
-    "src/*.{ts, tsx}": [
-      "npm run prettier:fix",
-      "npm run lint"
+    "*.{ts, tsx, js}": [
+      "eslint --fix",
+      "prettier --write --"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.2",
