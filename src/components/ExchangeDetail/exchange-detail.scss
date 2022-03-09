@@ -1,0 +1,41 @@
+.exchange-detail {
+  display: flex;
+  align-items: center;
+  max-width: 1024px;
+  background-color: white;
+  margin: 100px auto auto;
+  padding: 24px;
+
+  img {
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  &__container {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__empty {
+    font-size: 12px;
+    font-style: italic;
+    color: gray;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 24px 0;
+  }
+
+  &__social {
+    display: flex;
+  }
+  &__social-icon {
+    cursor: pointer;
+    padding: 0 8px;
+    font-size: 18px;
+  }
+}

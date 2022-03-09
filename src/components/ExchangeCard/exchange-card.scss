@@ -1,0 +1,44 @@
+.exchange-card {
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 12px;
+    padding: 12px;
+    display: flex;
+    background-color: white;
+    height: 150px;
+    width: 300px;
+    font-size: 14px;
+
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+    }
+
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 12px;
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__url {
+        font-size: 12px;
+        font-style: italic;
+        margin-bottom: 8px;
+    }
+
+    &__country, &__trust {
+        padding: 2px 0;
+    }
+}
