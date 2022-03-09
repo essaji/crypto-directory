@@ -1,13 +1,25 @@
+@import "src/styles/mixins";
+
 .exchange-card {
   transition: 0.3s;
   cursor: pointer;
-  margin: 12px;
+  margin: 8px 12px;
   padding: 12px;
   display: flex;
   background-color: white;
-  height: 150px;
-  width: 300px;
   font-size: 14px;
+  width: 100%;
+  border-radius: 5px;
+
+  @include when-device('small') {
+    height: 150px;
+    margin: 12px;
+    width: 300px;
+  }
+
+  @include when-device('x-small') {
+    margin: 12px;
+  }
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);

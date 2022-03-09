@@ -1,14 +1,31 @@
+@import "src/styles/mixins";
+
 .exchange-detail {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   max-width: 1024px;
   background-color: white;
-  margin: 100px auto auto;
+  margin: 24px 24px 0 24px;
   padding: 24px;
+  border-radius: 5px;
+
+  @include when-device('medium') {
+    margin: 100px auto auto;
+    flex-direction: row;
+    align-items: center;
+  }
 
   img {
     height: 150px;
     border-radius: 50%;
+  }
+
+  &__logo {
+    margin: auto;
+
+    @include when-device('medium') {
+      margin: 0;
+    }
   }
 
   &__container {
@@ -27,7 +44,11 @@
   &__name {
     font-size: 24px;
     font-weight: bold;
-    padding: 24px 0;
+    padding: 12px 0;
+
+    @include when-device('medium') {
+      padding: 24px 0;
+    }
   }
 
   &__social {

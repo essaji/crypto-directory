@@ -1,9 +1,15 @@
+@import "src/styles/mixins";
+
 .home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1500px;
-  margin: 100px auto auto;
+  margin: 0;
+
+  @include when-device('x-small') {
+    margin: 100px auto auto;
+  }
 
   &__title {
     font-size: 28px;
@@ -17,6 +23,9 @@
     display: flex;
     flex-flow: wrap;
     justify-content: center;
-    padding: 0 24px;
+
+    @include when-device('medium') {
+      padding: 0 24px;
+    }
   }
 }
