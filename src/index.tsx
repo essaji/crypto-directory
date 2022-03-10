@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import './styles/main.scss';
-import RooRoute from './routes/RooRoute';
+import './styles/basic.scss';
+import RootRoute from './routes/RootRoute';
 
 const queryClient = new QueryClient();
 
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
-    <RooRoute />
+    <RootRoute />
   </QueryClientProvider>,
   document.getElementById('root')
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ExchangeDetail from './ExchangeDetail';
 
 const mockedExchangeDetail = {
@@ -46,24 +46,15 @@ describe('ExchangeDetail component', () => {
 
   test('Should render the component', () => {
     renderComponent();
-    expect(screen.getByTestId('exchange-logo')).toHaveAttribute(
-      'src',
-      mockedExchangeDetail.image
-    );
+    expect(screen.getByTestId('exchange-logo')).toHaveAttribute('src', mockedExchangeDetail.image);
     expect(screen.getByText(mockedExchangeDetail.name)).toBeInTheDocument();
     expect(screen.getByText(mockedExchangeDetail.country)).toBeInTheDocument();
-    expect(
-      screen.getByText(mockedExchangeDetail.trust_score_rank)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(mockedExchangeDetail.description)
-    ).toBeInTheDocument();
+    expect(screen.getByText(mockedExchangeDetail.trust_score_rank)).toBeInTheDocument();
+    expect(screen.getByText(mockedExchangeDetail.description)).toBeInTheDocument();
   });
 
-  test('Should should open facebook page on clicking facebook icon', () => {
-    window.open = jest.fn();
+  test('Should show clickable facebook icon', () => {
     renderComponent();
-    fireEvent.click(screen.getByTestId('facebook-icon'));
-    expect(window.open).toBeCalledWith(mockedExchangeDetail.facebook_url);
+    expect(screen.getByTestId('social-link')).toHaveAttribute('href', mockedExchangeDetail.facebook_url);
   });
 });

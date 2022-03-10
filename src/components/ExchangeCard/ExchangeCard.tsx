@@ -1,22 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './exchange-card.scss';
 import { ExchangeInterface } from '../../services/services.types';
-import { useNavigate } from 'react-router-dom';
 
 export default function ExchangeCard(exchange: ExchangeInterface) {
   const navigate = useNavigate();
   return (
-    <div
-      className='exchange-card'
-      onClick={() => navigate(`/exchange/${exchange.id}`)}
-      data-testid='exchange-card'
-    >
+    <div className='exchange-card' onClick={() => navigate(`/exchange/${exchange.id}`)} data-testid='exchange-card'>
       <div className='exchange-card__logo'>
-        <img
-          data-testid='exchange-logo'
-          src={exchange.image}
-          alt='exchange-logo'
-        />
+        <img data-testid='exchange-logo' src={exchange.image} alt='exchange-logo' />
       </div>
       <div className='exchange-card__detail'>
         <div className='exchange-card__name'>{exchange.name}</div>

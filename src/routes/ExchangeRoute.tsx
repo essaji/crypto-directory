@@ -1,6 +1,7 @@
 import React from 'react';
-import ExchangeDetailPage from '../pages/ExchangeDetailPage/ExchangeDetailPage';
 import { Route, Routes } from 'react-router-dom';
+
+import ExchangeDetailPage from '../pages/ExchangeDetailPage/ExchangeDetailPage';
 
 export default function ExchangeRoute() {
   return (

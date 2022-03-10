@@ -35,16 +35,11 @@ describe('ExchangeCard component', () => {
   test('Should render the component', () => {
     renderComponent();
 
-    expect(screen.getByTestId('exchange-logo')).toHaveAttribute(
-      'src',
-      mockedExchange.image
-    );
+    expect(screen.getByTestId('exchange-logo')).toHaveAttribute('src', mockedExchange.image);
     expect(screen.getByText(mockedExchange.name)).toBeInTheDocument();
     expect(screen.getByText(mockedExchange.url)).toBeInTheDocument();
     expect(screen.getByText(mockedExchange.country)).toBeInTheDocument();
-    expect(
-      screen.getByText(mockedExchange.trust_score_rank)
-    ).toBeInTheDocument();
+    expect(screen.getByText(mockedExchange.trust_score_rank)).toBeInTheDocument();
   });
 
   test('Should navigate to exchange detail page', () => {

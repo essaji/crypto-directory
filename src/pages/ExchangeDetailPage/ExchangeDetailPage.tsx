@@ -4,6 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { fetchExchange } from '../../services/services';
 import ExchangeDetail from '../../components/ExchangeDetail/ExchangeDetail';
 import './exhcnage-detail-page.scss';
+import Loader from '../../components/Loader/Loader';
+import { ExchangeDetailInterface } from '../../services/services.types';
 
 export default function ExchangeDetailPage() {
   const { exchangeId } = useParams();
@@ -16,7 +18,7 @@ export default function ExchangeDetailPage() {
     staleTime: Infinity,
   });
 
-  if (isLoading) return <div className='loader' />;
+  if (isLoading) return <Loader />;
   if (error) {
     console.error(error);
     return <div>Oops! Something went wrong.</div>;
@@ -25,9 +27,9 @@ export default function ExchangeDetailPage() {
   return (
     <div className='exchange-detail-page'>
       <div className='exchange-detail-page__back'>
-        <strong onClick={() => navigate(-1)}>Back to Main</strong>
+        <strong onClick={() => navigate('/')}>Back to Main</strong>
       </div>
-      <ExchangeDetail {...exchange?.data} />
+      <ExchangeDetail {...(exchange as ExchangeDetailInterface)} />
     </div>
   );
 }
